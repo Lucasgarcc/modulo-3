@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <title>Sistema de Votação</title>
+</head>
+<body>
+     
+        <h1 style="color: rgb(66, 66, 219); font-size: 50px; font-family:Verdana, Geneva, Tahoma, sans-serif; text-align:center;">Eleições 2022</h1>
+        <h3 style="color: rgb(54, 201, 49); font-size: 15px; font-family:Verdana, Geneva, Tahoma, sans-serif; text-align:center;"id="urna"></h3>
+        <h3 style="color: rgb(29, 236, 219); font-size: 15px; font-family:Verdana, Geneva, Tahoma, sans-serif; text-align:center;"id="urna-2"></h3>
+        <h3 style="color: rgb(233, 157, 43); font-size: 15px; font-family:Verdana, Geneva, Tahoma, sans-serif; text-align:center;"id="urna-3"></h3>
+        <h3 style="color: rgb(236, 41, 41); font-size: 15px; font-family:Verdana, Geneva, Tahoma, sans-serif; text-align:center;"id="urna-4"></h3>
+        <h3 style="color: rgb(160, 160, 160); font-size: 15px; font-family:Verdana, Geneva, Tahoma, sans-serif; text-align:center;"id="urna-5"></h3>
+        <h3 style="color: rgb(48, 46, 47); font-size: 15px; font-family:Verdana, Geneva, Tahoma, sans-serif; text-align:center;"id="urna-6"></h3>
+  
+    <script>
+
+        let candidatos =  alert('Candidatos : | Ana: 10  || João: 20 ||  Marcia: 30 || Sergio: 40 || Branco 1 || Nulo 2');
+        let resultados = [0, 0, 0, 0, 0, 0]
+        let eleicao = 40;
+        let opcao = "sim";
+    
+        while( opcao === "sim" ){
+            eleicao = parseInt(prompt("Em quem você quer votar?"))
+
+            switch(eleicao){
+               
+                case 10: 
+                    
+                    resultados[0]++
+                    alert("Você votou na Ana!");
+                    opcao = prompt("Dejesa votar novamente?")
+                    break;
+
+                case 20:
+                   
+                    resultados[1]++
+                    alert("Você votou no João!");
+                    opcao = prompt("Dejesa votar novamente?")
+                    break;
+
+                case 30: 
+                   
+                    resultados[2]++
+                    alert("Você votou na Marcia!");
+                    opcao = prompt("Dejesa votar novamente?")
+                    break;
+                
+                case 40: 
+
+                    resultados[3]++
+                    alert("Você votou no Sergio!");
+                    opcao = prompt("Dejesa votar novamente?")
+                    break;
+                
+
+                case 1:
+
+                    resultados[4]++
+                    alert("Você votou em Branco!");
+                    opcao = prompt("Dejesa votar novamente?")
+                    break;
+    
+                
+                case 2: 
+
+                    resultados[5]++
+                    alert("Você votou em Nulo!");
+                    opcao = prompt("Dejesa votar novamente?")
+                    break;   
+
+            } 
+                
+                if ( eleicao == 10) {
+                document.getElementById('urna').innerHTML = "<h2>Candidata Ana teve: </h2>" +resultados[0];
+
+                }else if (eleicao == 20) {
+                    document.getElementById('urna-2').innerHTML = "<h2>Candidato João teve: </h2>"+resultados[1];
+
+                }else if (eleicao == 30) {
+                    document.getElementById('urna-3').innerHTML = "<h2>Candidata Marcia teve: </h2>"+resultados[2];
+
+                }else if (eleicao == 40) {
+                    document.getElementById('urna-4').innerHTML = "<h2>Candidato Sergio teve: </h2>"+resultados[3];
+
+                }else if (eleicao == 1) {
+                    document.getElementById('urna-5').innerHTML = "<h2>Votos em Branco teve: </h2>"+resultados[4];
+                
+                }else if (eleicao == 2) {
+                    document.getElementById('urna-6').innerHTML = "<h2>Votos em nulo: </h2>"+resultados[5];
+            }
+                
+        } alert("Fim!")
+    </script>
+</body>
+</html>

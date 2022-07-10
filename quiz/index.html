@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Quest</title>
+    <style>
+        body{
+            background-color: antiquewhite;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #fundo{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+              
+        }
+         img{
+            border-radius: 7px;
+         }
+
+         h1 {
+           padding-top: 13%;
+            
+            text-align:center;
+            color: tomato;
+            text-shadow: 5px 5px 10px 1px rgb(255, 255, 255)
+         }
+    </style>
+</head>
+
+<body>
+    <h1> Bora Jogar ?</h1>
+    <div id="fundo">
+        
+        <img src="img/fundo.jpg">
+    </div>
+    <script>
+        
+        const jogador = prompt("Digite seu nome?");
+        let resposta
+        let cont = 0
+        let opc = 10
+        let pontuacao = 0;
+       
+        if( jogador == "" ){
+            alert ("Por favor digite seu nome!")
+           (jogador = prompt("Digite seu nome?")) 
+        }else {
+            alert(` Bora Jogar  ${jogador} ?`)
+        }  
+           
+        
+
+        while(opc != 0){
+                opc = parseInt(prompt(`         ${jogador} \n Escolha um  tema você quer jogar? \n Responda com: [verdadeiro ou falso] \n 1 - cinema \n 2 - anime \n 3 - games  \n 0 - Sair `))
+
+                switch (opc){
+                case  1:
+                cinema()
+                break
+
+                case 2:
+                anime()
+                break
+                case 3:
+                    games()
+                break 
+
+                case 0:
+                    alert("você saiu")
+                    break
+                default: 
+                    alert("digite uma opção valida") 
+                
+                    break
+                } 
+            }
+        
+          
+    
+        
+
+        function cinema(){
+            resposta = prompt(" Ano em que  foi lançado Velozes e Furiosos foi em 2011 🎞?")
+                    if(resposta == "falso"){
+                        alert(" ✔ respota correta, velozea e Furiosos é uma saga americana, criada em 2001!")
+                        pontuacao ++
+                    }else {
+                        alert("❌ resposta incorreta ")
+                    }
+                    resposta = prompt("O ator que interpretou o Jack Sparrow em piratas do caribe, foi o johnny Galecki 🏴‍☠️?")
+                    if(resposta == "falso"){
+                        alert(" ✔ respota correta, foi interpretado pelo ator Johnny deep!")
+                        pontuacao ++
+                    }else {
+                        alert("❌ resposta incorreta")
+                    }
+                    resposta = prompt("Vin disel, atuou no filme triplo ❌ ?")
+                    alert(" ✔ respota correta, Vin disel foi o protagonista!")
+                    if (resposta == "verdadeiro" ){
+                        pontuacao ++
+                    }else{
+                        alert("❌ resposta incorreta")
+                    }
+                    alert(`${jogador}, você fez ${pontuacao} pontos`)
+                    pontuacao = 0
+        }
+
+        function anime(){
+            resposta = prompt(" Anime One Peice tem mais de 500 epsodios 👒 ?")
+                    if(resposta == "verdadeiro"){
+                        alert("✔ respota correta, One Piece tem  1.023 episódios!")
+                        
+                        pontuacao ++
+                    }else {
+                        alert("❌ resposta incorreta.")
+                    }
+                    resposta = prompt("Dragon ball z tem menos de 20 anos que criado 🐲?")
+                    if(resposta == "falso"){
+                        alert("✔ respota correta, Dragon Ball Z é uma das séries de anime mais reconhecidas, com um efeito cultural mundial com bem mais de 30 anos!")
+                        pontuacao ++
+                    }else {
+                        alert("❌ resposta incorreta.")
+                    }
+                    resposta = prompt(" Anine Naruto é considerado um dos mais assistido 🤜🤛?")
+                    if (resposta == "verdadeiro" ){
+                        alert("✔ respota correta, no ranking naruto ocupa o 5 lugar dos animes mais assistido no mundo!")
+                        pontuacao ++
+                    }else{
+                        alert("❌ resposta incorreta")
+                    }
+                    alert(`${jogador}, você fez ${pontuacao} pontos`)
+                    pontuacao = 0
+        }
+
+        function games(){
+            resposta = prompt(" Sonic foi criado em 1991 ?")
+                    if(resposta == "verdadeiro"){
+                        alert("✔ respota correta, Sonic foi criado no dia 23 de setembro de 1991 👟!")
+                        pontuacao ++
+                    }else {
+                        alert("❌ resposta incorreta.")
+                    }
+                    resposta = prompt(" Grand Theft Auto: San Andreas foi lançado em 2008 🌉?")
+                     if(resposta == "falso"){
+                        alert("✔ respota correta, foi lançado no ano de 2004!")
+                        pontuacao ++
+                    }else {
+                        alert("❌ resposta incorreta.")
+                    }
+                 resposta = prompt("✔ O video Game ATARi foi o primeiro a ser lançado na história dos games 🕹?")
+                    if (resposta == "falso" ){
+                        alert("✔ respota correta, O primeiro videogame lançado foi o: Magnavox Odyssey em 1977 ")
+                        pontuacao ++
+                    }else{
+                        alert("❌ resposta incorreta")
+                    }
+                    alert(`${jogador}, você fez ${pontuacao} pontos`)
+                    pontuacao = 0
+        }
+    </script>
+</body>
+</html>

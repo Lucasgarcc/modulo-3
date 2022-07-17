@@ -22,6 +22,7 @@
     <script>
         
         function nomeAleat(){
+
             var nome = [
                 "Paulo",
                 "Ana",
@@ -35,11 +36,17 @@
                 "Luana",
             ];
 
-           for(var i = 0; i < nome.length; i ++) {
+          for(var i = 0; i < nome.length; i ++) {
             document.getElementById("nome").innerHTML = nome [Math.floor(Math.random
-            ()* 10)]; 
-           }
-            
+            ()* 10)];
+          }if (nome) {
+          console.log("está tudo funcionando corretamente!");
+          return true;
+        } else {
+          console.log(" está com erro");
+          return falso;
+        }
+   
         } 
      
     </script>

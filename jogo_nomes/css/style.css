@@ -44,14 +44,26 @@ button{
 }
 
 @media  screen and (max-width: 500px ) {
-    #nomr {
+    
+     .main{
+    width: 30%;
+    height: 45%;
+    }
+
+    #nome {
         width: 30%;
     height: 9%;
     }
 }
 
 @media  screen and (max-width: 400px ) {
-    #nomr {
+    
+     .main{
+    width: 30%;
+    height: 45%;
+    }
+
+    #nome {
         width: 30%;
     height: 9%;
     }

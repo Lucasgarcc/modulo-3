@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>carrosel
+    </title>
+</head>
+<body>
+    <h2>One Piece</h2>
+    <div class="carrosel-container"> <!--EStilo-->
+        <div class="slides fade">
+            <div class="numText">1/4</div>
+             <img src="1.jpg" style="width: 100%;">
+             <div class="text">Luffy</div>
+        </div>
+        <div class="slides fade">
+            <div class="numText">2/4</div>
+             <img src="2.jpg" style="width: 100%;">
+             <div class="text">Namy</div>
+        </div>
+        <div class="slides fade">
+            <div class="numText">3/4</div>
+             <img src="3.jpg" style="width: 100%;">
+             <div class="text">Zoro</div>
+        </div>
+        <div class="slides fade">
+            <div class="numText">4/4</div>
+             <img src="4.jpg" style="width: 100%;">
+             <div class="text">Usopp</div>
+        </div>
+
+        <a class="prev" onclick="pluslides(-1)">❮</a>
+        <a class="next" onclick="pluslides(1)">❯ </a>
+    </div> <!-- carrosel-container-->
+
+    <br>
+
+    <div style="text-align:center">
+        <span class="ponto" onclick="slideAtual(1)"></span>
+        <span class="ponto" onclick="slideAtual(2)"></span>
+        <span class="ponto" onclick="slideAtual(3)"></span>
+        <span class="ponto" onclick="slideAtual(4)"></span>
+    </div>
+
+
+    <script>
+        let slideIndex = 1;
+        mostreSlides(slideIndex);
+
+        function pluslides(n){
+            mostreSlides(slideIndex += n)
+        }
+
+        function slideAtual(n){
+             mostreSlides(slideIndex =n)
+        }
+
+        function mostreSlides(n){
+            let i;
+            let slides = document.getElementsByClassName("slides");
+            let pontos = document.getElementsByClassName("ponto");
+            
+            if (n > slides.length){
+                slideIndex = 1;
+            }
+
+            if (n < 1){
+                slideIndex = slides.length;
+            }
+
+            for(i=0; i < slides.length; i++){
+                slides[i].style.display = "none";
+            }
+
+            for(i=0; i < pontos.length; i++){
+                pontos[i].className= pontos[1].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display ="block";
+            pontos[slideIndex-1].className += " active";
+
+
+        }
+    </script>
+</body>
+</html>
